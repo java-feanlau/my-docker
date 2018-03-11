@@ -179,3 +179,12 @@ Message Body Path:   /tmp/rocketmq/msgbodys/C0A80168378C4617C26437FF22CF038D
 
 MessageTrack [consumerGroup=please_rename_unique_group_name_4, trackType=NOT_CONSUME_YET, exceptionDesc=null]
 ```
+
+## 控制台
+
+```
+git clone https://github.com/apache/rocketmq-externals
+cd rocketmq-console & mvn package
+cd target
+java -jar rocketmq-console-ng-1.0.0.jar --server.port=12581 --rocketmq.config.namesrvAddr=localhost:9876
+```
