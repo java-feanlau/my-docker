@@ -28,4 +28,11 @@
         <name>mapreduce.jobhistory.webapp.address</name>
         <value>${yarn.nodemanager.hostname}:19888</value>
     </property>
+    <property>
+      <name>yarn.resourcemanager.am.max-attempts</name>
+      <value>10</value>
+      <description>
+        The maximum number of application master execution attempts.
+      </description>
+    </property>
 </configuration>
