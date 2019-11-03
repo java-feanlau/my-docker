@@ -4,15 +4,34 @@
 ```
 cd mysql-5.6
 docker build -t my-mysql:5.6 .
+
+cd mysql-5.7
+docker build -t mysql:5.7 .
 ```
 
-## run mysql5.6
+## run mysql
 ```
 docker run -d -p 3306:3306 \
   -v /Users/helechen/IdeaProjects/my-docker/mysql/mysql-5.6/my.cnf:/etc/mysql/my.cnf \
   --name mysql56 \
   my-mysql:5.6
 ```
+
+第一次启动，拷贝my.cnf
+```
+docker run -d -p 3307:3307 \
+  -v /Users/xu/IdeaProjects/my-docker/mysql/mysql-5.7/my.cnf:/etc/mysql/my.cnf \
+  --name mysql57 \
+  mysql:5.7
+```
+
+之后进去就不用拷贝my.cnf了。
+
+```
+docker run -d -p 3307:3307 --name mysql57 mysql:5.7
+```
+
+根据本地的my.cnf配置，数据文件在/var/lib/mysql路径下。
 
 ## go into container
 ```
